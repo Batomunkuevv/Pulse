@@ -1,1 +1,8 @@
 prepros.config
+*.json
+gulpfile.js
+
+node_modules/
+src
+src/
+/gulp
