@@ -1,0 +1,64 @@
+.header {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    top: 0;
+    left: 0;
+    padding: 21px 0;
+    z-index: 50;
+    &__container {
+    }
+
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        color: #fff;
+    }
+
+    &__logo {
+        & img {
+            max-width: 100%;
+        }
+    }
+
+    &__cooperation {
+        transform: translate(-25%, 0);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__text {
+        font-weight: 500;
+        font-size: 0.75rem;
+        line-height: 100%;
+        margin: 0px 0px 15px 0px;
+    }
+
+    &__companyes {
+        font-weight: 500;
+        font-size: 1.125rem;
+        line-height: 1.61%;
+    }
+
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__phone {
+        color: inherit;
+        font-weight: 700;
+        font-size: 1.125rem;
+        line-height: 100%;
+        margin: 0px 0px 7px 0px;
+    }
+
+    &__btn {
+        align-self: end;
+        font-size: 0.75rem;
+        line-height: 158.3%;
+        padding: 8px 21px;
+    }
+}
