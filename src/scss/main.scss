@@ -1,87 +1,28 @@
-//<Mixins>=================================================================================================
+//<Base>=======================================================================================================
+@import "base/_fonts";
+@import "base/_mixins";
+@import "base/function";
+@import "base/_variables";
+@import "base/_ibg";
 
-@import "_mixins";
+//</Base>=====================================================================================================
 
-//</Mixins>================================================================================================
+//<Connecting HEADER AND FOOTER>=======================================================================
 
-//<Translation in Rem and Em and Em>=======================================================================
+@import "blocks/_header";
+@import "blocks/_footer";
 
-//Rem
-@function rem($px) {
-    $result: math.div($px, 16) + rem;
-    @return $result;
-}
-
-//Em
-@function em($px) {
-    $result: math.div($px, 16) + em;
-    @return $result;
-}
-
-//</Translation in Rem and Em>=============================================================================
-
-//<Fonts>==================================================================================================
-
-//<Connect fonts>==========================================================================================
-
-@import url("https://fonts.googleapis.com/css2?family=MuseoModerno:wght@300;400;500;700&display=swap");
-
-@font-face {
-    font-family: "icomoon";
-    src: url("../fonts/icomoon.eot?o6ia9w");
-    src: url("../fonts/icomoon.eot?o6ia9w#iefix") format("embedded-opentype"),
-        url("../fonts/icomoon.ttf?o6ia9w") format("truetype"),
-        url("../fonts/icomoon.woff?o6ia9w") format("woff"),
-        url("../fonts/icomoon.svg?o6ia9w#icomoon") format("svg");
-    font-weight: normal;
-    font-style: normal;
-    font-display: block;
-}
-
-[class^="icon-"],
-[class*=" icon-"] {
-    /* use !important to prevent issues with browser extensions that change fonts */
-    font-family: "icomoon" !important;
-    speak: never;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-
-    /* Better Font Rendering =========== */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-.icon-pinterest-p:before {
-    content: "\e902";
-}
-.icon-instagram:before {
-    content: "\e903";
-}
-.icon-facebook1:before {
-    content: "\e904";
-}
-
-//</Connect fonts>==========================================================================================
-
-//</Fonts>==================================================================================================
-
-//<Variables>===========================================================================================
-
-@import "_variables";
-
-//</Variables>==========================================================================================
+//</Connecting page styles and elements>=====================================================================
 
 //<Zeroing and Common parameters>===========================================================================
 
-@import "_nullstyle";
+@import "base/_nullstyle";
 
 html,
 body {
     font-family: $fontfamaly;
     font-size: 16px;
+    font-weight: 500;
     color: #0d0d0d;
 }
 
@@ -100,7 +41,6 @@ body {
     background: #c70101;
     padding: 12px 28px;
     border-radius: 10px;
-    font-weight: 500;
     font-size: 1rem;
     line-height: 162.5%;
     text-align: center;
@@ -135,6 +75,7 @@ body {
 .container {
     max-width: $maxWidthContainer;
     margin: 0 auto;
+    padding: 0 15px;
     @media (max-width: 576px) {
         max-width: none;
     }
@@ -147,17 +88,11 @@ body {
     }
     &__advantages {
     }
+    &__rewievs {
+    }
 }
 
 //</Main grid>===============================================================================================
-
-//<Connecting page styles and elements>=====================================================================
-
-@import "_ibg";
-@import "_header";
-@import "_footer";
-
-//</Connecting page styles and elements>=====================================================================
 
 //===========================================================================================================
 
@@ -165,149 +100,27 @@ body {
 
 //<Fullscreen>=================================================================================================
 
-.fullscreen {
-    min-height: 90vh;
-    padding: 166px 0px 93px 0px;
-    position: relative;
-    &__container {
-    }
-    &__body {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        color: #ffffff;
-        padding: 10px;
-    }
-    &__title {
-        font-weight: 700;
-        font-size: 2.625rem;
-        line-height: 100%;
-        text-transform: uppercase;
-        margin: 0px 0px 17px 0px;
-    }
-
-    &__subtitle {
-        font-weight: 500;
-        font-size: 1.5rem;
-        line-height: 100%;
-        text-transform: uppercase;
-        margin: 0px 0px 60px 0px;
-    }
-
-    &__advantages {
-        display: flex;
-        justify-content: end;
-        align-items: start;
-        margin: 0px -20px 65px -20px;
-    }
-
-    &__column {
-        padding: 0 20px;
-    }
-
-    &__item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    &__btn {
-        margin: 0px 0px 15px 0px;
-    }
-
-    &__tocatalog {
-    }
-
-    &__link {
-        color: inherit;
-        font-weight: 500;
-        font-size: 1rem;
-        text-transform: uppercase;
-        text-decoration: underline;
-        line-height: 1.5625%;
-        padding: 5px;
-    }
-
-    &__bg {
-    }
-}
-
-.item-fullscreen {
-    width: 123px;
-    &__icon {
-        max-width: 100%;
-        margin: 0px 0px 15px 0px;
-    }
-
-    &__text {
-        font-weight: 500;
-        font-size: 0.875rem;
-        line-height: 100%;
-        text-align: center;
-    }
-}
+@import "blocks/main/_fullscreen";
 
 //</Fullscreen>=================================================================================================
 
 //<Advantages>=================================================================================================
 
-.advantages {
-    padding: 73px 0px 83px 0px;
-    &__container {
-    }
-
-    &__title {
-        margin: 0px 0px 60px 0px;
-    }
-
-    &__body {
-        display: flex;
-        justify-content: space-between;
-        align-items: start;
-        padding: 5px;
-    }
-
-    &__column {
-        width: 262px;
-    }
-
-    &__item {
-        display: flex;
-        flex-direction: column;
-        justify-self: start;
-        align-items: center;
-        text-align: center;
-    }
-}
-
-.item-advantages {
-    &__icon {
-        margin: 0px 0px 35px 0px;
-        & img {
-            max-width: 100%;
-        }
-    }
-
-    &__title {
-        font-weight: 700;
-        font-size: 1.125rem;
-        line-height: 161%;
-        margin: 0px 0px 20px 0px;
-    }
-
-    &__text {
-        font-weight: 300;
-        font-size: 0.875rem;
-        line-height: 125%;
-    }
-
-    &__link {
-        text-transform: uppercase;
-        color: #ff0000;
-    }
-}
+@import "blocks/main/_advantages";
 
 //</Advantages>=================================================================================================
+
+//<Consultation>=================================================================================================
+
+@import "blocks/main/consultation";
+
+//</Consultation>=================================================================================================
+
+//<Rewievs>=================================================================================================
+
+@import "blocks/main/_rewievs";
+
+//</Rewievs>=================================================================================================
 
 //</Main block>==============================================================================================
 
