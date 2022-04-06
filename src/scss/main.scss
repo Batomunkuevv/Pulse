@@ -1,63 +1,31 @@
 //<Base>=======================================================================================================
-@import "base/_fonts";
-@import "base/_mixins";
+@import "base/fonts";
+@import "base/mixins";
 @import "base/function";
-@import "base/_variables";
-@import "base/_ibg";
+@import "base/variables";
+@import "base/ibg";
+@import "base/slick";
 
 //</Base>=====================================================================================================
 
-//<Connecting HEADER AND FOOTER>=======================================================================
+//<Connecting HEADER AND FOOTER>==============================================================================
 
-@import "blocks/_header";
-@import "blocks/_footer";
+@import "blocks/header";
+@import "blocks/footer";
 
 //</Connecting page styles and elements>=====================================================================
 
-//<Zeroing and Common parameters>===========================================================================
+//<Zeroing>==================================================================================================
 
-@import "base/_nullstyle";
+@import "base/nullstyle";
 
-html,
-body {
-    font-family: $fontfamaly;
-    font-size: 16px;
-    font-weight: 500;
-    color: #0d0d0d;
-}
+//</Zeroing>=================================================================================================
 
-.title {
-    font-weight: 700;
-    font-size: 1.875rem;
-    line-height: 100%;
-    text-align: center;
-}
+//<Common parameters>========================================================================================
 
-.btn {
-    color: inherit;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #c70101;
-    padding: 12px 28px;
-    border-radius: 10px;
-    font-size: 1rem;
-    line-height: 162.5%;
-    text-align: center;
-    text-transform: uppercase;
-    transition: all 0.5s ease 0s;
-    &:hover {
-        transform: scale(1.025);
-        transition: all 0.5s ease 0s;
-        box-shadow: 0px 1px 10px 3px #fff;
-    }
-    &:active {
-        transform: scale(0.9);
-        box-shadow: 0px 1px 5px 0px #fff;
-    }
-}
+@import "base/common";
 
-//</Zeroing and Common Parameters>===========================================================================
+//</Common parameters>=======================================================================================
 
 //<Wrapper>==================================================================================================
 
@@ -106,7 +74,7 @@ body {
 
 //<Advantages>=================================================================================================
 
-@import "blocks/main/_advantages";
+@import "blocks/main/advantages";
 
 //</Advantages>=================================================================================================
 
@@ -116,9 +84,15 @@ body {
 
 //</Consultation>=================================================================================================
 
+//<Slider>=================================================================================================
+
+@import "blocks/main/slider";
+
+//</Slider>=================================================================================================
+
 //<Rewievs>=================================================================================================
 
-@import "blocks/main/_rewievs";
+@import "blocks/main/rewievs";
 
 //</Rewievs>=================================================================================================
 
