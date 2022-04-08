@@ -39,6 +39,7 @@ window.addEventListener("DOMContentLoaded", () => {
     function hideTabContent() {
         tabsContent.forEach((item) => {
             item.classList.add("hide");
+            item.classList.remove("fade");
         });
 
         tabs.forEach((item) => {
@@ -48,6 +49,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     function showTabContent(i = 0) {
         tabsContent[i].classList.remove("hide");
+        tabsContent[i].classList.add("fade");
         tabs[i].classList.add("catalog__tab_active");
     }
 
@@ -105,17 +107,22 @@ window.addEventListener("DOMContentLoaded", () => {
         modalClose = document.querySelectorAll(".modal__close"),
         overlay = document.querySelector(".overlay"),
         catalogItemsName = document.querySelectorAll(".item-catalog__name");
+
     btnsConsultation.forEach((btn) => {
         btn.addEventListener("click", (e) => {
             overlay.classList.remove("hide");
+            overlay.classList.add("fade");
             modalConsultation.classList.remove("hide");
+            modalConsultation.classList.add("fade");
             document.body.style.cssText = "overflow: hidden";
         });
     });
     btnsOrder.forEach((btn, i) => {
         btn.addEventListener("click", (e) => {
             overlay.classList.remove("hide");
+            overlay.classList.add("fade");
             modalOrder.classList.remove("hide");
+            modalOrder.classList.add("fade");
             modalOrderDescr.textContent = catalogItemsName[i].textContent;
             document.body.style.cssText = "overflow: hidden";
         });
@@ -124,6 +131,7 @@ window.addEventListener("DOMContentLoaded", () => {
     modalClose.forEach((item) => {
         item.addEventListener("click", () => {
             overlay.classList.add("hide");
+            overlay.classList.remove("fade");
             modalConsultation.classList.add("hide");
             modalOrder.classList.add("hide");
             modalThanks.classList.add("hide");

@@ -209,6 +209,19 @@ body {
   width: 280px;
 }
 
+.fade {
+  animation-name: fade;
+  animation-duration: 0.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .header {
   position: absolute;
   width: 100%;
@@ -735,10 +748,9 @@ body {
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
-  overflow: hidden;
+  transition: all 0.5s ease 0s;
 }
-
-.modal {
+.overlay .modal {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -751,7 +763,7 @@ body {
   font-weight: 700;
   position: relative;
 }
-.modal__close {
+.overlay .modal__close {
   position: absolute;
   top: 0;
   right: -40px;
@@ -760,17 +772,17 @@ body {
   cursor: pointer;
   color: #c70101;
 }
-.modal__title {
+.overlay .modal__title {
   font-size: 1.125rem;
   line-height: 100%;
   margin: 0px 0px 10px 0px;
 }
-.modal__descr {
+.overlay .modal__descr {
   font-size: 0.875rem;
   line-height: 100%;
   margin: 0px 0px 26px 0px;
 }
-.modal_mini {
+.overlay .modal_mini {
   min-height: 140px;
 }
 
