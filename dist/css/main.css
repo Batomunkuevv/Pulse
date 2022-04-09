@@ -1139,7 +1139,7 @@ body {
 }
 @media (max-width: 400px) {
   .catalog__item {
-    width: 250px;
+    width: 295px;
   }
 }
 
@@ -1193,7 +1193,6 @@ body {
 .item-catalog__top {
   flex: 1 1 auto;
   margin: 0px 0px 17px 0px;
-  position: relative;
 }
 .item-catalog__img {
   margin: 0px 0px 15px 0px;
