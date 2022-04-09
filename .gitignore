@@ -2,5 +2,6 @@ prepros.config
 *.json
 gulpfile.js
 
+src/
 node_modules/
 /gulp
