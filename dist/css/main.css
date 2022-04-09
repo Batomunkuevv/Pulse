@@ -54,6 +54,25 @@
   content: "\e904";
 }
 
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes heartBeat {
+  from {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(1);
+  }
+}
 .ibg {
   background-position: center;
   background-size: cover;
@@ -277,14 +296,6 @@ body {
   animation-duration: 0.5s;
 }
 
-@keyframes fade {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 .header {
   position: absolute;
   width: 100%;
@@ -840,6 +851,9 @@ body {
   .item-advantages__icon {
     margin: 0px 0px 10px 0px;
   }
+}
+.item-advantages__icon_heartbeat {
+  animation: heartBeat 1.5s ease infinite;
 }
 .item-advantages__title {
   font-weight: 700;
