@@ -1,0 +1,64 @@
+.overlay {
+    position: fixed;
+    z-index: 51;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    transition: all 0.5s ease 0s;
+    .modal {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 380px;
+        min-height: 400px;
+        background: #f2f2f2;
+        padding: 38px 40px 40px 40px;
+        text-align: center;
+        font-weight: 700;
+        position: relative;
+        @media (max-width: 767px) {
+            width: 350px;
+            padding: 30px 20px;
+        }
+        @media (max-width: 576px) {
+            width: 300px;
+        }
+
+        &__close {
+            position: absolute;
+            top: 0;
+            right: -40px;
+            font-size: 41px;
+            line-height: 100%;
+            cursor: pointer;
+            color: #c70101;
+            @media (max-width: 576px) {
+                right: 0;
+                top: -40px;
+            }
+        }
+
+        &__title {
+            font-size: 1.125rem;
+            line-height: 100%;
+            margin: 0px 0px 10px 0px;
+            @media (max-width: 767px) {
+                font-size: 1rem;
+            }
+        }
+
+        &__descr {
+            font-size: 0.875rem;
+            line-height: 100%;
+            margin: 0px 0px 26px 0px;
+        }
+
+        &__form {
+        }
+
+        &_mini {
+            min-height: 140px;
+        }
+    }
+}
