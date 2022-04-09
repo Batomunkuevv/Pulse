@@ -140,4 +140,37 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     //</Poppap>=================================================================================================
+
+    //<Header-Scroll>=================================================================================================
+    const header = document.querySelector("header"),
+        headerContacts = header.querySelector(".header__contacts"),
+        headerBtn = headerContacts.querySelector(".header__btn"),
+        headerOfficial = header.querySelector(".header__official"),
+        headerPhone = header.querySelector(".header__phone"),
+        headerBody = header.querySelector(".header__body");
+
+    window.addEventListener("scroll", (e) => {
+        if (document.documentElement.scrollTop >= "85") {
+            header.classList.add("header_scroll", "fade");
+            headerContacts.classList.add("header__contacts_scroll");
+            headerBtn.classList.add("header__btn_scroll");
+            headerBtn.classList.add("header__btn_scroll");
+            headerOfficial.classList.add("header__official_scroll");
+            headerPhone.classList.add("header__phone_scroll"),
+                headerBody.classList.add("header__body_scroll");
+        } else {
+            headerOfficial.classList.remove("header__official_scroll");
+            header.classList.remove("header_scroll", "fade");
+            headerContacts.classList.remove("header__contacts_scroll");
+            headerBtn.classList.remove("header__btn_scroll");
+            headerPhone.classList.remove("header__phone_scroll");
+            headerBody.classList.remove("header__body_scroll");
+        }
+    });
+
+    //</Header-Scroll>=================================================================================================
+
+    //<Form-validate>=================================================================================================
+
+    //</Form-valida>=================================================================================================
 });
