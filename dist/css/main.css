@@ -244,6 +244,7 @@ body {
 .feed-form {
   width: 302px;
   margin: 0 auto;
+  position: relative;
 }
 @media (max-width: 767px) {
   .feed-form {
@@ -260,6 +261,22 @@ body {
     width: 225px;
   }
 }
+.feed-form::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(51, 51, 51, 0.9);
+  opacity: 1;
+  visibility: hidden;
+  border-radius: 3px;
+}
+.feed-form._sending::after {
+  opacity: 1;
+  visibility: visible;
+}
 .feed-form__input {
   width: 100%;
   height: 52px;
@@ -270,11 +287,19 @@ body {
   font-size: 0.875rem;
   color: #4b4b4b;
   border-radius: 5px;
+  transition: all 0.3s ease 0s;
 }
 @media (max-width: 400px) {
   .feed-form__input {
     height: 40px;
   }
+}
+.feed-form__input:focus {
+  transition: all 0.3s ease 0s;
+  box-shadow: 0 0 15px #7a956b;
+}
+.feed-form__input._error {
+  box-shadow: 0 0 15px red;
 }
 .feed-form__btn {
   width: 100%;
@@ -927,12 +952,9 @@ body {
     font-size: 0.9rem;
   }
 }
-.consultation__form {
-  margin: 0px;
-}
-@media (max-width: 576px) {
-  .consultation__form {
-    margin: 0 auto;
+@media (min-width: 576px) {
+  .consultation__form .feed-form {
+    margin: 0px;
   }
 }
 
@@ -1417,6 +1439,9 @@ body {
   font-size: 0.875rem;
   line-height: 100%;
   margin: 0px 0px 26px 0px;
+}
+.overlay .modal__form .feed-form__input._error {
+  box-shadow: 0 0 5px red;
 }
 .overlay .modal_mini {
   min-height: 140px;
