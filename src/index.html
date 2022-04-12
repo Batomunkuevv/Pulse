@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+    @@include('html/head.html', { 'title': 'Главная' })
+
+    <body>
+        <div class="wrapper">
+            @@include('html/header.html', {})
+            <main class="page">
+                @@include('html/main/fullscreen.html', {}) @@include('html/main/Advantages.html',{})
+                @@include('html/main/Consultation.html',{}) @@include('html/main/Slider.html',{})
+                @@include('html/main/catalog.html',{}) @@include('html/main/Rewievs.html',{})
+            </main>
+            @@include('html/footer.html', {}) @@include('html/main/modal.html', {})
+            @@include('html/pageup.html',{})
+        </div>
+
+        <!--*===================== Scripts======================== -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+        <script src="js/script.min.js"></script>
+        <!--* ==================================================== -->
+    </body>
+</html>
