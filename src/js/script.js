@@ -135,7 +135,9 @@ window.addEventListener("DOMContentLoaded", () => {
         document.body.style.cssText = "overflow: hidden";
     }
 
-    function openModalThanks(i) {
+    function openModalThanks() {
+        overlay.classList.remove("hide");
+        overlay.classList.add("fadeIn");
         modalThanks.classList.remove("hide");
         modalThanks.classList.add("fadeIn");
         document.body.style.cssText = "overflow: hidden";
