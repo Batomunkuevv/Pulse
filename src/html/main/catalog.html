@@ -2,6 +2,8 @@
     <div class="catalog__container container">
         <h3 class="catalog__title title">Каталог пульсометров</h3>
         <ul class="catalog__tabs">
+            <!-- Убери лишние div'ы внутри li -- твой скрипт проверяет таргет на наличие класса catalog__tab -->
+            <!-- И когда кликаешь по тексту, то target === div, а у него нет класса catalog__tab, поэтому табы не работают -->
             <li class="catalog__tab catalog__tab_active"><div>Для фитнеса</div></li>
             <li class="catalog__tab"><div>Для бега</div></li>
             <li class="catalog__tab"><div>Для триатлона</div></li>
