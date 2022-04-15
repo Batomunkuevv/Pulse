@@ -64,6 +64,15 @@ window.addEventListener("DOMContentLoaded", () => {
     showTabContent();
 
     tabsParent.addEventListener("click", (e) => {
+        // Коммент написал в html
+        // Так же ты можешь элементам задавать data-атрибуты
+        // И проверять их на наличие через target.hasAttribute('data-your-attribute');
+
+        // Можно ещё проверять через цикл -- если у target нет такого атрибута
+        // То подниматься на уровень выше до target = target.parentElement
+        // И проверять наличие атрибута
+        // А цикл должен крутиться до тех пор, пока target не станет равен tabsParent
+        // Если цикл дошёл до этого родителя, то это означает, что клик был совершён не по табу
         const target = e.target;
 
         if (target && target.classList.contains("catalog__tab")) {
@@ -149,6 +158,7 @@ window.addEventListener("DOMContentLoaded", () => {
         modalConsultation.classList.add("hide");
         modalOrder.classList.add("hide");
         modalThanks.classList.add("hide");
+        // Оно и так работает, но для правильности стоит прописать overflow: visible или auto
         document.body.style.cssText = "overflow: ";
     }
 
@@ -266,10 +276,19 @@ window.addEventListener("DOMContentLoaded", () => {
         input.classList.remove("_error");
     }
 
+    // Регулярка и функция норм, но над неймингом надо подумать
+    // Так как функция проверяет корректно ли поле + возвращает true, если поле некорректное
+    // То стоит назвать isIncorrectEmail или isEmailIncorrect
+    // Сразу станет понятно что функция вернёт true, если поле некорректное
+    // И функцию можно сделать универсальной, если вместо input принимать только строку
+    // В таком случае функцию можно будет использовать не только для полей, но и для любых значений в приложении (но это не критично)
     function emailTest(input) {
         return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
     }
 
+    // По аналогии с верхней функцией
+    // + нужно сменить с 4 на 2, т.к. пользователь с именем Ян будет недоволен, если не сможет заказать пульсометр :)
+    // И ещё можно число вынести в константу, например MIN_NAME_LENGTH так станет понятнее, что означает это число
     function nameTest(input) {
         return input.value.length < 4;
     }
@@ -278,6 +297,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
     function formValidate(form) {
         let error = 0;
+        // Тут можно прочитать по работе с формами https://learn.javascript.ru/forms-controls
+        // Также ты можешь полям установить атрибут required и тогда пользователь не сможет отправить форму, если поля не заполнены
         let formReq = form.querySelectorAll("._req");
 
         for (let i = 0; i < formReq.length; i++) {
